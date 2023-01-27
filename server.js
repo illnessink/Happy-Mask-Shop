@@ -30,6 +30,14 @@ app.use(methodOverride('_method'));
 // Mount Route - INDUCES
 
 // Seed Route 
+const data = require('./data');
+app.get('/masks/seed', (req, res) => {
+    Mask.deleteMany({}, (error, results) => {
+        Mask.create(data, (error, products) => {
+            res.redirect('/masks');
+        });
+    });
+});
 
 // Index - GET - /masks
 app.get('/masks', (req, res) => {
