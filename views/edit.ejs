@@ -9,7 +9,7 @@
 <body>
     <h1>Happy Mask Shop</h1>
     <h2>Edit <%= mask.name %></h2>
-    <form action="/masks/<%= mask._id %>?=method=PUT" method="POST">
+    <form action="/masks/<%= mask._id %>?_method=PUT" method="POST">
         <label>Name:
             <input type="text" name="name" value="<%= mask.name %>"><br/>
         </label>
