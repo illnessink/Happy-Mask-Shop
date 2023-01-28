@@ -54,6 +54,11 @@ app.get('/masks/new', (req, res) => {
 });
 
 // Delete - DELETE - /masks/:id
+app.delete('/masks/:id', (req, res) => {
+    Mask.findByIdAndDelete(req.params.id, (error, data) => {
+        res.redirect('/masks');
+    });
+});
 // Update - PUT - /masks/:id
 // Create - POST - /masks
 app.post('/masks', (req, res) => {
