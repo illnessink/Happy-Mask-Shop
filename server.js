@@ -59,7 +59,18 @@ app.delete('/masks/:id', (req, res) => {
         res.redirect('/masks');
     });
 });
+
 // Update - PUT - /masks/:id
+app.put('/masks/:id', (req, res) => {
+    req.body.owned = !!req.body.owned;
+    Mask.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+    },
+    (error, updatedMask) => {
+        res.redirect(`/masks/${req.params.id}`)
+    });
+});
+
 // Create - POST - /masks
 app.post('/masks', (req, res) => {
     req.body.owned = !!req.body.owned;
