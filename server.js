@@ -41,7 +41,11 @@ app.get('/masks/seed', (req, res) => {
 
 // Index - GET - /masks
 app.get('/masks', (req, res) => {
-    res.send('Index Page')
+    Mask.find({}, (error, allMasks) => {
+        res.render('index.ejs', {
+            masks: allMasks,
+        });
+    });
 });
 
 // New - GET - /masks/new
@@ -50,28 +54,13 @@ app.get('/masks', (req, res) => {
 // Create - POST - /masks
 // Edit - GET - /masks/:id/edit
 // Show - GET - /masks/:id
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.get('/masks/:id', (req, res) => {
+    Mask.findById(req.params.id, (error, foundMask) => {
+        res.render('show.ejs', {
+            mask: foundMask,
+        });
+    });
+});
 
 
 app.listen(PORT, () => {
