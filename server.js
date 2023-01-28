@@ -1,5 +1,5 @@
 const express = require('express');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Mask = require('./models/mask');
 
@@ -56,6 +56,12 @@ app.get('/masks/new', (req, res) => {
 // Delete - DELETE - /masks/:id
 // Update - PUT - /masks/:id
 // Create - POST - /masks
+app.post('/masks', (req, res) => {
+    req.body.owned = !!req.body.owned;
+    Mask.create(req.body, (error, createdMask) => {
+        res.redirect('/masks');
+    });
+});
 // Edit - GET - /masks/:id/edit
 // Show - GET - /masks/:id
 app.get('/masks/:id', (req, res) => {
