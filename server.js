@@ -67,7 +67,16 @@ app.post('/masks', (req, res) => {
         res.redirect('/masks');
     });
 });
+
 // Edit - GET - /masks/:id/edit
+app.get('/masks/:id/edit', (req, res) => {
+    Mask.findById(req.params.id, (error, foundMask) => {
+        res.render('edit.ejs', {
+            mask: foundMask,
+        });
+    });
+});
+
 // Show - GET - /masks/:id
 app.get('/masks/:id', (req, res) => {
     Mask.findById(req.params.id, (error, foundMask) => {

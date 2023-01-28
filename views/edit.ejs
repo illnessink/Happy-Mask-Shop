@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Mask</title>
+</head>
+<body>
+    <h1>Happy Mask Shop</h1>
+    <h2>Edit <%= mask.name %></h2>
+    <form action="/masks/<%= mask._id %>?=method=PUT" method="POST">
+        <label>Name:
+            <input type="text" name="name" value="<%= mask.name %>"><br/>
+        </label>
+        <label>Img url:
+            <input type="text" name="img" value="<%= mask.img %>"><br/>
+        </label>
+        <label>Description:
+            <input type="text" name="description" value="<%= mask.description %>"><br/>
+        </label>
+        <label>Price:
+            <input type="number" name="price" value="<%= mask.price %>"><br/>
+        </label>
+        <label>Owned:
+            <input type="checkbox" name="owned"
+            <% if(mask.owned === true) { %>
+                checked
+            <% } %> /><br/>
+        </label>
+        <input type="submit" value="Submit Changes"/>
+    </form>
+    
+</body>
+</html>
