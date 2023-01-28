@@ -15,7 +15,7 @@
     </script>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;600&family=Staatliches&display=swap" rel="stylesheet">
     <title>Show Page</title>
 </head>
 
@@ -30,7 +30,7 @@
         <h2><%= mask.name %></h2>
         <img src="<%= mask.img %>">
         <p><%= mask.description %></p>
-        <p><%= mask.price %></p>
+        <p><%= mask.price %> Rupees</p>
         <p>Owned: <%-mask.owned ? 'Yes' : 'No' %></p>
         <button>
             <a href="/masks/<%= mask._id %>/edit">Edit Mask</a>
@@ -39,6 +39,7 @@
             <input type="submit" value="DELETE">
         </form>
     </div>
+    <footer></footer>
 </body>
 
 </html>
