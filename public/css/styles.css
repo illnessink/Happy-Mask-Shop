@@ -1,0 +1,23 @@
+.navBar {
+    background-color: #2C1D21;
+    height: 50px;
+    color: whitesmoke;
+    align-content: center;
+}
+a {
+    text-decoration: none;
+}
+.navA {
+    color: whitesmoke;
+}
+
+img {
+    width:200px;
+    height:200px;
+    object-fit: contain;
+}
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Staatliches', cursive;
+}

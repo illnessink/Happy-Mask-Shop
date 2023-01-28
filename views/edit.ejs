@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Mask</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <title>Edit Mask</title>
 </head>
+
 <body>
-    <nav>
-        <a href="/masks">Back to All Masks</a>
+    <nav class="navBar">
+        <a class="navA" href="/masks">Back to All Masks</a>
     </nav>
-    <h1>Happy Mask Shop</h1>
-    <h2>Edit <%= mask.name %></h2>
-    <form action="/masks/<%= mask._id %>?_method=PUT" method="POST">
-        <label>Name:
-            <input type="text" name="name" value="<%= mask.name %>"><br/>
-        </label>
-        <label>Img url:
-            <input type="text" name="img" value="<%= mask.img %>"><br/>
-        </label>
-        <label>Description:
-            <input type="text" name="description" value="<%= mask.description %>"><br/>
-        </label>
-        <label>Price:
-            <input type="number" name="price" value="<%= mask.price %>"><br/>
-        </label>
-        <label>Owned:
-            <input type="checkbox" name="owned"
-            <% if(mask.owned === true) { %>
-                checked
-            <% } %> /><br/>
-        </label>
-        <input type="submit" value="Submit Changes"/>
-    </form>
-    
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Happy Mask Shop</h1>
+        </div>
+        <h2>Edit <%= mask.name %></h2>
+        <form action="/masks/<%= mask._id %>?_method=PUT" method="POST">
+            <label>Name:
+                <input type="text" name="name" value="<%= mask.name %>"><br />
+            </label>
+            <label>Img url:
+                <input type="text" name="img" value="<%= mask.img %>"><br />
+            </label>
+            <label>Description:
+                <input type="text" name="description" value="<%= mask.description %>"><br />
+            </label>
+            <label>Price:
+                <input type="number" name="price" value="<%= mask.price %>"><br />
+            </label>
+            <label>Owned:
+                <input type="checkbox" name="owned" <% if(mask.owned === true) { %> checked <% } %> /><br />
+            </label>
+            <input type="submit" value="Submit Changes" />
+        </form>
+    </div>
+
 </body>
+
 </html>
