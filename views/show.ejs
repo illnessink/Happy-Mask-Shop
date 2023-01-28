@@ -12,7 +12,7 @@
     <img src="<%= mask.img %>">
     <p><%= mask.description %></p>
     <p><%= mask.price %></p>
-    <p>Owned: <%=mask.owned %></p>
+    <p>Owned: <%-mask.owned ? 'Yes' : 'No' %></p>
     
 </body>
 </html>
