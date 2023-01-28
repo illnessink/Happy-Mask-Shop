@@ -7,11 +7,13 @@
     <title>Index Page</title>
 </head>
 <body>
+    <nav>
+        <a href="/masks/new">Add A New Mask</a>
+    </nav>
     <h1>Happy Mask Shop</h1>
     <div>
         <% masks.forEach(mask => { %>
             <div>
-                <% console.log(mask.name) %>
                 <h3><%= mask.name %></h3>
                 <a href="/masks/<%= mask._id %>"><img src="<%= mask.img %>"></a>
                 <p>Price: <%= mask.price %> Rupees</p>
