@@ -49,6 +49,10 @@ app.get('/masks', (req, res) => {
 });
 
 // New - GET - /masks/new
+app.get('/masks/new', (req, res) => {
+    res.render('new.ejs');
+});
+
 // Delete - DELETE - /masks/:id
 // Update - PUT - /masks/:id
 // Create - POST - /masks
