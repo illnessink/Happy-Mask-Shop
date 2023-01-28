@@ -7,6 +7,9 @@
     <title>Edit Mask</title>
 </head>
 <body>
+    <nav>
+        <a href="/masks">Back to All Masks</a>
+    </nav>
     <h1>Happy Mask Shop</h1>
     <h2>Edit <%= mask.name %></h2>
     <form action="/masks/<%= mask._id %>?_method=PUT" method="POST">
