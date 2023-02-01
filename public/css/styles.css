@@ -16,8 +16,12 @@ a {
     color: whitesmoke;
     margin-left: 20px;
 }
+p {
+    width: 60%;
+}
 
 img {
+    display: block;
     width:200px;
     height:200px;
     object-fit: contain;
@@ -37,9 +41,19 @@ footer {
     left: 0;
     bottom: 0;
 }
-h3, a, p, .maskDiv {
+h2, h3, a, p, .maskDiv {
     text-align: center;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .navA:hover {
     color:rgb(213, 211, 211);
+}
+
+button, input {
+    display: block;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
