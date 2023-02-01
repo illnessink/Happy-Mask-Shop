@@ -1,6 +1,7 @@
 body {
     background-color: #d3b595;
     font-family: 'Lexend Deca', sans-serif;
+    margin-bottom: 50px;
 }
 .navBar {
     background-color: #2C1D21;
@@ -33,6 +34,9 @@ h1 {
     font-size: 80px;
     font-family: 'Staatliches', cursive;
     margin-bottom: 20px;
+}
+h3 {
+    font-size: 23px;
 }
 footer {
     width:100%;
