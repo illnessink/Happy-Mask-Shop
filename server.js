@@ -39,6 +39,10 @@ app.get('/masks/seed', (req, res) => {
     });
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/masks')
+});
+
 // Index - GET - /masks
 app.get('/masks', (req, res) => {
     Mask.find({}, (error, allMasks) => {
