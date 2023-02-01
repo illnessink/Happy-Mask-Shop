@@ -20,7 +20,7 @@ p {
     width: 60%;
 }
 
-img {
+.maskImg {
     display: block;
     width:200px;
     height:200px;
@@ -32,6 +32,7 @@ h1 {
     text-align: center;
     font-size: 80px;
     font-family: 'Staatliches', cursive;
+    margin-bottom: 20px;
 }
 footer {
     width:100%;
@@ -51,9 +52,28 @@ h2, h3, a, p, .maskDiv {
     color:rgb(213, 211, 211);
 }
 
-button, input {
+button, input, label {
     display: block;
     margin: 5px;
     margin-left: auto;
     margin-right: auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    height: 55px;
+}
+img#shopGuy {
+    width: 300px;
+    height: 350px;
+    margin-left: auto;
+    object-fit: contain;
+}
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 85%;
+    }
 }
