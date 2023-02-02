@@ -54,6 +54,16 @@ app.get('/masks', (req, res) => {
     });
 });
 
+// Owned Masks - GET - /masks/owned
+app.get('/masks/owned', (req, res) => {
+    Mask.find({owned: true}, (error, allMasks) => {
+        res.render('index.ejs', {
+            masks: allMasks,
+            wallet: wallet,
+        });
+    });
+});
+
 // New - GET - /masks/new
 app.get('/masks/new', (req, res) => {
     res.render('new.ejs');
