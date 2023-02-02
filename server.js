@@ -90,6 +90,19 @@ app.put('/masks/:id/buy', (req, res) => {
     });
 });
 
+// Sell - PUT - /masks/:id/sell
+app.put('/masks/:id/sell', (req, res) => {
+    Mask.findById(req.params.id, (error, mask) => {
+        wallet = wallet + mask.price;
+        Mask.findByIdAndUpdate(req.params.id, {
+            owned: owned = false,
+        },
+        (error, updatedMask) => {
+            res.redirect(`/masks/${mask._id}`);
+        })
+    });
+});
+
 // Create - POST - /masks
 app.post('/masks', (req, res) => {
     req.body.owned = !!req.body.owned;
