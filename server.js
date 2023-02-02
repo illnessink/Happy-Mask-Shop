@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Mask = require('./models/mask');
+let wallet = 1000;
 
 
 const app = express();
@@ -48,6 +49,7 @@ app.get('/masks', (req, res) => {
     Mask.find({}, (error, allMasks) => {
         res.render('index.ejs', {
             masks: allMasks,
+            wallet: wallet,
         });
     });
 });
@@ -75,6 +77,19 @@ app.put('/masks/:id', (req, res) => {
     });
 });
 
+// Buy - PUT - /masks/:id/buy
+app.put('/masks/:id/buy', (req, res) => {
+    Mask.findById(req.params.id, (error, mask) => {
+        wallet = wallet - mask.price;
+        Mask.findByIdAndUpdate(req.params.id, {
+            owned: owned = true,
+        },
+        (error, updatedMask) => {
+            res.redirect(`/masks/${mask._id}`);
+        })
+    });
+});
+
 // Create - POST - /masks
 app.post('/masks', (req, res) => {
     req.body.owned = !!req.body.owned;
@@ -97,6 +112,7 @@ app.get('/masks/:id', (req, res) => {
     Mask.findById(req.params.id, (error, foundMask) => {
         res.render('show.ejs', {
             mask: foundMask,
+            wallet: wallet,
         });
     });
 });
