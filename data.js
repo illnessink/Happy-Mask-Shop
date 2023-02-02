@@ -27,5 +27,26 @@ module.exports = [
         price: 30,
         owned: false,
 
+    },
+    {
+        name: "Goron Mask",
+        img: "https://static.wikia.nocookie.net/zelda_gamepedia_en/images/c/c1/MM3D_Goron_Mask_Artwork.png",
+        description: "The Goron Mask is a Mask from Ocarina of Time and Majora's Mask. It does not have much of a purpose in Ocarina of Time, but it is a useful and required item in Majora's Mask.",
+        price: 500,
+        owned: false,
+    },
+    {
+        name: "Zora Mask",
+        img: "https://static.wikia.nocookie.net/zelda_gamepedia_en/images/0/0c/OoT_Zora_Mask_Render.png",
+        description: "The Zora Mask is one of four Masks used for Transformation in Majora's Mask. When worn, it transforms Link into Zora Link.",
+        price: 500,
+        owned: false,
+    },
+    {
+        name: 'Mask of Truth',
+        img: "https://static.wikia.nocookie.net/zelda_gamepedia_en/images/6/64/OoT_Mask_of_Truth_Render.png",
+        description: "Wearing the mask allows Link to speak to Gossip Stones to learn new things about Hyrule and its inhabitants. The Happy Mask Shop Owner mentions that the mask was passed down by the Sheikah.",
+        price: 250,
+        owned: false,
     }
 ]
