@@ -38,8 +38,8 @@
             <% masks.forEach(mask => { %>
             <div class="col-xs-1 col-sm-5 col-md-4 col-lg-3 maskDiv">
                 <a href="/masks/<%= mask._id %>"><img class="maskImg" src="<%= mask.img %>"></a>
-                <h3><%= mask.name %></h3>
-                <p><%= mask.price %> Rupees</p>
+                <h3 class="maskNameh3"><%= mask.name %></h3>
+                <p class="maskPriceP"><%= mask.price %> Rupees</p>
             </div>
             <% })%>
             <img id="shopGuy" src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/5/50/MM_Happy_Mask_Salesman_Artwork.png">

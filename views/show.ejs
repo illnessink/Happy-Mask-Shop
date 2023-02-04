@@ -34,26 +34,30 @@
         <div class="jumbotron">
             <h1><a id="h1HomePage" href="/masks">Happy Mask Shop</a></h1>
         </div>
-        <h2><%= mask.name %></h2>
-        <img class="maskImg" src="<%= mask.img %>">
-        <p><%= mask.description %></p>
-        <p><%= mask.price %> Rupees</p>
-        <p>Owned: <%-mask.owned ? 'Yes' : 'No' %></p>
-        <button>
-            <a href="/masks/<%= mask._id %>/edit">Edit Mask</a>
-        </button>
-        <% if(mask.owned === false) { %>
-            <form action="/masks/<%= mask._id %>/buy?_method=PUT" method="POST">
-                <input type="submit" value="BUY">
-            </form>
-            <% } else { %>
-                <form action="/masks/<%= mask._id %>/sell?_method=PUT" method="POST">
-                    <input type="submit" value="SELL">
+        <div class="showMaskDiv">
+            <h2><%= mask.name %></h2>
+            <img class="showMaskImg" src="<%= mask.img %>">
+            <p><%= mask.description %></p>
+            <p><%= mask.price %> Rupees</p>
+            <p>Owned: <%-mask.owned ? 'Yes' : 'No' %></p>
+            <% if(mask.owned === false) { %>
+                <form action="/masks/<%= mask._id %>/buy?_method=PUT" method="POST">
+                    <input type="submit" value="BUY">
                 </form>
-                <% } %>
-        <form action="/masks/<%= mask._id %>?_method=DELETE" method="POST">
-            <input id="delbutton" type="submit" value="DELETE">
-        </form>
+                <% } else { %>
+                    <form action="/masks/<%= mask._id %>/sell?_method=PUT" method="POST">
+                        <input type="submit" value="SELL">
+                    </form>
+                    <% } %>
+        </div>
+        <div class="buttonContainer">
+            <button id="editButton">
+                <a href="/masks/<%= mask._id %>/edit">Edit Mask</a>
+            </button>
+            <form action="/masks/<%= mask._id %>?_method=DELETE" method="POST">
+                <input id="delButton" type="submit" value="DELETE">
+            </form>
+        </div>
     </div>
     <footer></footer>
 </body>
