@@ -21,13 +21,19 @@ p {
     width: 60%;
 }
 
-.maskImg {
+.maskImg, #imgChest {
     display: block;
     width:200px;
     height:200px;
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
+}
+
+#imgChest {
+    width:400px;
+    height:400px;
+    margin-top: 50px;
 }
 h1 {
     text-align: center;
