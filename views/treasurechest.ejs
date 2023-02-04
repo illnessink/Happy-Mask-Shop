@@ -40,19 +40,19 @@
     </div>
     <img id="imgChest" src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/0/0f/MM3D_Chest.png">
     <% let treasure = 0 %>
-    <% console.log(wallet) %>
     <script>
       let imgChest = document.getElementById("imgChest");
       imgChest.addEventListener("click", function() {
         let choices = ["0", "5", "10", "25", "100"];
         let treasure = choices[Math.floor(Math.random() * choices.length)];
-        // wallet = wallet - 10;
         if(treasure > 0) {
-            alert("Congrats! You win " + treasure + " Rupees!");
-            console.log(wallet)
             let walletValue = document.getElementById("walletValue")
+            walletValue.innerHTML = (parseInt(walletValue.innerHTML) - 10);
+            alert("Congrats! You win " + treasure + " Rupees!");
             walletValue.innerHTML = (parseInt(walletValue.innerHTML) + parseInt(treasure));
         } else {
+            let walletValue = document.getElementById("walletValue")
+            walletValue.innerHTML = (parseInt(walletValue.innerHTML) - 10);
             alert("Sorry! You didnt win anything!")
         }
       });
