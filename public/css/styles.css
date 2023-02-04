@@ -85,6 +85,10 @@ span#wallet {
     background-color: rgb(152, 11, 11);
 }
 
+#h1HomePage {
+    color:#2C1D21
+}
+
 @media only screen and (min-width: 1400px) {
     .container {
         max-width: 85%;
