@@ -57,7 +57,7 @@ app.get('/masks', (req, res) => {
 // Owned Masks - GET - /masks/owned
 app.get('/masks/owned', (req, res) => {
     Mask.find({owned: true}, (error, allMasks) => {
-        res.render('index.ejs', {
+        res.render('owned.ejs', {
             masks: allMasks,
             wallet: wallet,
         });
