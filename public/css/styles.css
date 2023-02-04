@@ -98,3 +98,13 @@ span#emptyWallet {
         max-width: 85%;
     }
 }
+@media only screen and (max-width: 560px) {
+    .navA, #wallet {
+        font-size: 10px;
+    }
+    span#wallet, span#emptyWallet {
+        float: right;
+        margin-right: 20px;
+        margin-top: 7px;
+    }
+}
