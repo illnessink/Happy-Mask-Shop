@@ -100,7 +100,7 @@ app.put('/masks/:id/buy', (req, res) => {
             });
         } else {
             res.send(`<script>
-                alert("Thou hast not enough Rupees! Sell some masks to add more to thy wallet, adventurer.");
+                alert("Thou hast not enough Rupees! Sell some masks and add more to thy wallet, adventurer.");
                 window.location.href = "/masks";
             </script>`);
         }
