@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;600&family=Staatliches&display=swap" rel="stylesheet">
+    <title>Treasure Chest Game</title>
+</head>
+
+<body>
+    <nav class="navBar">
+        <a class="navA" href="/masks">All Masks</a>
+        <a class="navA" href="/masks/new">New Mask</a>
+        <a class="navA" href="/masks/owned">Owned Masks</a>
+        <% if(wallet > 0) { %>
+            <span id="wallet">Wallet: <span id="walletValue"><%= wallet %></span> Rupees</span>
+        <% } else { %>
+            <span id="emptyWallet">Wallet: 0 Rupees</span>
+       <% } %>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1><a id="h1HomePage" href="/masks">Happy Mask Shop</a></h1>
+        </div>
+        <h2>Treasure Chest Game</h2>
+        <p>For 10 Rupees, try your hand at winning a more substantial prize! But be warned, you might win nothing...</p>
+        <p>Click on the chest to play!</p>
+    </div>
+    <img id="imgChest" src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/0/0f/MM3D_Chest.png">
+    <% let treasure = 0 %>
+    <% console.log(wallet) %>
+    <script>
+      let imgChest = document.getElementById("imgChest");
+      imgChest.addEventListener("click", function() {
+        let choices = ["0", "5", "10", "25", "100"];
+        let treasure = choices[Math.floor(Math.random() * choices.length)];
+        // wallet = wallet - 10;
+        if(treasure > 0) {
+            alert("Congrats! You win " + treasure + " Rupees!");
+            console.log(wallet)
+            let walletValue = document.getElementById("walletValue")
+            walletValue.innerHTML = (parseInt(walletValue.innerHTML) + parseInt(treasure));
+        } else {
+            alert("Sorry! You didnt win anything!")
+        }
+      });
+    </script>
+    <footer></footer>
+</body>
+
+</html>
