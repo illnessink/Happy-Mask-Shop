@@ -24,7 +24,11 @@
         <a class="navA" href="/masks">Back to All Masks</a>
         <a class="navA" href="/masks/new">Add New Mask</a>
         <a class="navA" href="/masks/owned">Owned Masks</a>
-        <span id="wallet">Wallet: <%= wallet %> Rupees</span>
+        <% if(wallet > 0) { %>
+            <span id="wallet">Wallet: <%= wallet %> Rupees</span>
+        <% } else { %>
+            <span id="emptyWallet">Wallet: 0 Rupees</span>
+       <% } %>
     </nav>
     <div class="container">
         <div class="jumbotron">
