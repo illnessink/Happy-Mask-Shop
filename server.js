@@ -90,13 +90,20 @@ app.put('/masks/:id', (req, res) => {
 // Buy - PUT - /masks/:id/buy
 app.put('/masks/:id/buy', (req, res) => {
     Mask.findById(req.params.id, (error, mask) => {
-        wallet = wallet - mask.price;
-        Mask.findByIdAndUpdate(req.params.id, {
-            owned: owned = true,
-        },
-        (error, updatedMask) => {
-            res.redirect(`/masks/${mask._id}`);
-        })
+        if(wallet >= mask.price) {
+            wallet = wallet - mask.price;
+            Mask.findByIdAndUpdate(req.params.id, {
+                owned: owned = true,
+            },
+            (error, updatedMask) => {
+                res.redirect(`/masks/${mask._id}`);
+            });
+        } else {
+            res.send(`<script>
+                alert("Thou hast not enough Rupees! Sell some masks to add more to thy wallet, adventurer.");
+                window.location.href = "/masks";
+            </script>`);
+        }
     });
 });
 
