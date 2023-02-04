@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Mask = require('./models/mask');
 let wallet = 1000;
+let treasure = 0;
 
 
 const app = express();
@@ -61,6 +62,14 @@ app.get('/masks/owned', (req, res) => {
             masks: allMasks,
             wallet: wallet,
         });
+    });
+});
+
+// Treasure Chest - GET - /masks/treasurechest
+app.get('/masks/treasurechest', (req, res) => {
+    res.render('treasurechest.ejs', {
+        wallet: wallet,
+        treasure: treasure,
     });
 });
 
