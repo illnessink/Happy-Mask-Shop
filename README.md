@@ -15,8 +15,8 @@ This is a web application inspired by "The Happy Mask Shop" from the Zelda games
 
 ## Screenshots
 
-<img src="/Users/ness/class-practice-projects/Happy-Mask-Shop/public/images/Screen Shot 2023-02-06 at 12.38.30 PM.png" alt="Screenshot of index page" style="height: 300px; width:600px;"/>
-<img src="/Users/ness/class-practice-projects/Happy-Mask-Shop/public/images/Screen Shot 2023-02-06 at 12.42.12 PM.png" alt="Screenshot of index page" style="height: 300px; width:600px;"/>
+<img src="public/images/Screen Shot 2023-02-06 at 12.38.30 PM.png" alt="Screenshot of index page" style="height: 300px; width:600px;"/>
+<img src="public/images/Screen Shot 2023-02-06 at 12.42.12 PM.png" alt="Screenshot of show page" style="height: 300px; width:600px;"/>
 
 ## Getting Started
 
