@@ -15,7 +15,8 @@
     </script>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;600&family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;600&family=Staatliches&display=swap"
+        rel="stylesheet">
     <title>Treasure Chest Game</title>
 </head>
 
@@ -25,10 +26,10 @@
         <a class="navA" href="/masks/new">New Mask</a>
         <a class="navA" href="/masks/owned">Owned Masks</a>
         <% if(wallet > 0) { %>
-            <span id="wallet">Wallet: <span id="walletValue"><%= wallet %></span> Rupees</span>
+        <span id="wallet">Wallet: <span id="walletValue"><%= wallet %></span> Rupees</span>
         <% } else { %>
-            <span id="emptyWallet">Wallet: 0 Rupees</span>
-       <% } %>
+        <span id="emptyWallet">Wallet: 0 Rupees</span>
+        <% } %>
     </nav>
     <div class="container">
         <div class="jumbotron">
@@ -41,21 +42,21 @@
     <img id="imgChest" src="https://static.wikia.nocookie.net/zelda_gamepedia_en/images/0/0f/MM3D_Chest.png">
     <% let treasure = 0 %>
     <script>
-      let imgChest = document.getElementById("imgChest");
-      imgChest.addEventListener("click", function() {
-        let choices = ["0", "5", "10", "25", "100"];
-        let treasure = choices[Math.floor(Math.random() * choices.length)];
-        if(treasure > 0) {
-            let walletValue = document.getElementById("walletValue")
-            walletValue.innerHTML = (parseInt(walletValue.innerHTML) - 10);
-            alert("Congrats! You win " + treasure + " Rupees!");
-            walletValue.innerHTML = (parseInt(walletValue.innerHTML) + parseInt(treasure));
-        } else {
-            let walletValue = document.getElementById("walletValue")
-            walletValue.innerHTML = (parseInt(walletValue.innerHTML) - 10);
-            alert("Sorry! You didnt win anything!")
-        }
-      });
+        let imgChest = document.getElementById("imgChest");
+        imgChest.addEventListener("click", function () {
+            let choices = ["0", "5", "10", "25", "100"];
+            let treasure = choices[Math.floor(Math.random() * choices.length)];
+            if (treasure > 0) {
+                let walletValue = document.getElementById("walletValue")
+                walletValue.innerHTML = (parseInt(walletValue.innerHTML) - 10);
+                alert("Congrats! You win " + treasure + " Rupees!");
+                walletValue.innerHTML = (parseInt(walletValue.innerHTML) + parseInt(treasure));
+            } else {
+                let walletValue = document.getElementById("walletValue")
+                walletValue.innerHTML = (parseInt(walletValue.innerHTML) - 10);
+                alert("Sorry! You didnt win anything!")
+            }
+        });
     </script>
     <footer></footer>
 </body>
